@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d050212ef4342ffb3dd439fb71252ef" Name="Diagram1" ZoomLevel="110">
+        <EntityTypeShape EntityType="user9Model.Agents" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="user9Model.HistoryAgent" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="user9Model.ProductSale" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="user9Model.ProductShort" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="user9Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="user9Model.TypeAget" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="user9Model.TypeProduct" Width="1.5" PointX="0.75" PointY="1.625" />
+        <AssociationConnector Association="user9Model.FK_Agents_TypeAget" />
+        <AssociationConnector Association="user9Model.FK_ProductSale_ProductShort" />
+        <AssociationConnector Association="user9Model.FK_ProductShort_TypeProduct" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

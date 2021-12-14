@@ -1,0 +1,85 @@
+﻿<Page x:Class="AgentsExamen.AgentListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AgentsExamen"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AgentListPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Content="Добавить" Width="160" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#43DCFE" FontFamily="Comic Sans MS" Click="Button_Click"/>
+            <Button Name="changePrioritet" Content="Изменить приоритет" Width="160" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#43DCFE" FontFamily="Comic Sans MS" Click="Button_Click_1" Visibility="Hidden"/>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Row="0" Width="150" Height="30" Name="searchTxt" TextChanged="SearchTxt_TextChanged"/>
+            <ComboBox Name="cmbType" Grid.Column="1" Width="150" Height="30" SelectionChanged="CmbFiltr_SelectionChanged" SelectedIndex="0"/>
+            <ComboBox Name="cmbFiltr" Grid.Column="2" Width="150" Height="30" SelectionChanged="CmbFiltr_SelectionChanged" />
+
+        </Grid>
+        <ListView Name="lvAgent" Grid.Row="1" MouseDoubleClick="LvAgent_MouseDoubleClick" SelectionChanged="LvAgent_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <Image Width="100" Height="100">
+                                <Image.Source>
+                                    <Binding Path="getLogo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>Resources/picture.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                        </StackPanel>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                                <TextBlock Text="{Binding Path=ТипАгента}"/>
+                                <TextBlock Text=" | "/>
+                                <TextBlock Text="{Binding Path=НаименованиеАгента}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" >
+                                <TextBlock Text="10 продаж за год"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2">
+                                <TextBlock Text="{Binding Path=ТелефонАгента}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                <TextBlock Text="Приоритет "/>
+                                <TextBlock Text="{Binding Path=Приоритет}"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
+                            <StackPanel>
+                                <TextBlock Text="10%"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
