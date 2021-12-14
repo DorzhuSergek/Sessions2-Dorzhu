@@ -34,8 +34,8 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="7*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
@@ -72,9 +72,9 @@
                                 <TextBlock Text="{Binding Path=Приоритет}"/>
                             </StackPanel>
                         </Grid>
-                        <Grid Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <Grid Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" >
                             <StackPanel>
-                                <TextBlock Text="10%"/>
+                                <TextBlock Text="10%" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" />
                             </StackPanel>
                         </Grid>
                     </Grid>

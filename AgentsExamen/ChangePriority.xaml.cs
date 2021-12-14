@@ -30,5 +30,23 @@ namespace AgentsExamen
             }
             DataContext = _currentAgent;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (_currentAgent != null)
+                {
+                    
+                    user9Entities.GetContext().SaveChanges();
+                    MessageBox.Show("Все успешно");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
+            this.Close();
+        }
     }
 }

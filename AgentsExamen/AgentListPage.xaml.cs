@@ -107,13 +107,19 @@ namespace AgentsExamen
 
         private void LvAgent_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var agentList = user9Entities.GetContext().Agents.ToList();
+            var agentList = lvAgent.SelectedItem as Agents;
+
+            var agentItem = user9Entities.GetContext().Agents.Where(x => x.id == agentList.id).ToList()[0];
+            Manager._frame.Navigate(new AddAgentPage(agentItem));
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ChangePriority change = new ChangePriority(null);
+            var agentList = lvAgent.SelectedItem as Agents;
+
+            var agentItem = user9Entities.GetContext().Agents.Where(x => x.id == agentList.id).ToList()[0];
+            ChangePriority change = new ChangePriority(agentItem);
             change.Show();
         }
 

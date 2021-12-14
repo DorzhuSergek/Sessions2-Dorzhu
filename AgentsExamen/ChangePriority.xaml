@@ -17,6 +17,6 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Изменить приоритет" FontFamily="Comic Sans MS" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Name="txtPrioritet" Grid.Column="1" Width="70" Height="50" Text="{Binding Path=Приоритет}" />
-        <Button Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Button Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="1" Click="Button_Click"/>
     </Grid>
 </Window>

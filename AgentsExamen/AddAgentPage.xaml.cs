@@ -48,6 +48,7 @@ namespace AgentsExamen
             {
                 MessageBox.Show("Ошибка");
             }
+            Manager._frame.Navigate(new AgentListPage());
         }
 
         private void DelAgent_Click(object sender, RoutedEventArgs e)
@@ -62,7 +63,7 @@ namespace AgentsExamen
             {
                 MessageBox.Show("Ошибка при удалении");
             }
-
+            Manager._frame.Navigate(new AgentListPage());
 
         }
 
